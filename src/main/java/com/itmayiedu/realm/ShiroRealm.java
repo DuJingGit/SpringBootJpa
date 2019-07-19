@@ -65,17 +65,4 @@ public class ShiroRealm extends AuthorizingRealm {
                 new SimpleAuthenticationInfo(name, userInfo.getPassword(), getName());
         return authenticationInfo;
     }
-    public static void main(String[] args) {
-        String saltSource = "admin1224";
-
-        String hashAlgorithmName = "MD5";
-        String credentials = "admin";
-        Object salt = new Md5Hash(saltSource);
-        //System.out.println(salt);
-        int hashIterations = 1024;
-
-        String result = new SimpleHash(hashAlgorithmName, credentials, salt).toString();
-        System.out.println(result);
-        //System.out.println("afdbaa3ee63a8b4e97196dcfd24b03fc".equals(result.toString()));
-    }
 }
