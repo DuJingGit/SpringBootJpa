@@ -18,11 +18,13 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-    <resources>
-      <resource>
-        <directory>com.itmayiedu.app.App</directory>
-      </resource>
-    </resources>
+        <build>	
+    	<resources>
+      		<resource>
+        		<directory>com.itmayiedu.app.App</directory>
+      		</resource>
+    	</resources>
+	</build>
 	<dependencies>
 	<!--支持jsp解析-->
 	<dependency>
