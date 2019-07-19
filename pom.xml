@@ -18,13 +18,6 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-        <build>	
-    	<resources>
-      		<resource>
-        		<directory>com.itmayiedu.app.App</directory>
-      		</resource>
-    	</resources>
-	</build>
 	<dependencies>
 	<!--支持jsp解析-->
 	<dependency>
@@ -136,6 +129,11 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<resources>
+      			<resource>
+        			<directory>com.itmayiedu.app.App</directory>
+      			</resource>
+    		</resources>
 	</build>
 
 </project>
