@@ -25,33 +25,6 @@ public class LoginController {
 //	public void remoKey() {
 //		cacheManager.getCache("baseCache").clear();
 //	}
-	@RequestMapping("/shiro-login")
-	public String login(HttpServletRequest request,@RequestParam("username") String name, @RequestParam("password") String password){
-		System.out.println("dj-------------123");
-		HttpSession session = request.getSession();
-		session.setAttribute("name",name);
-		String cKey = "1234567890123456";
-		try {
-			password = AES.Encrypt(password,cKey);
-		}catch (Exception e){
-			e.printStackTrace();
-		}
-		System.out.println(password);
-		Subject subject = SecurityUtils.getSubject();
-		UsernamePasswordToken token = new UsernamePasswordToken(name, password);
-
-		try {
-			subject.login(token);
-			//subject.isPermitted("aaaa");
-			subject.isPermitted("a");//判断权限()
-		} catch (AuthenticationException ae) {
-			ae.printStackTrace();
-			System.out.println("登陆失败: " + ae.getMessage());
-			return "/shiro-login";
-		}
-		return "/welcome";
-	}
-
 	@RequestMapping("/toLogin")
 	public String toLogin() {
 		System.out.println("dj--------------------");
